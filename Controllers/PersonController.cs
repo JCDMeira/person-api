@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using person_api.Entities;
 using person_api.Persistence;
 
 namespace person_api.Controllers
@@ -20,11 +21,19 @@ namespace person_api.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetAll(Guid id)
+        public ActionResult GetById(Guid id)
         {
             var person = _context.Persons.SingleOrDefault(p => p.Id == id);
             if(person == null) { NotFound(); }
             return Ok(person);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Person person)
+        {
+
+            _context.Persons.Add(person);
+            return CreatedAtAction(nameof(GetById), new { id= Guid.NewGuid().ToString() }, person);
         }
     }
 }
