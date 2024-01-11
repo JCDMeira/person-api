@@ -18,5 +18,13 @@ namespace person_api.Controllers
         var persons = _context.Persons;
             return Ok(persons);
         }
+
+        [HttpGet("{id}")]
+        public ActionResult GetAll(Guid id)
+        {
+            var person = _context.Persons.SingleOrDefault(p => p.Id == id);
+            if(person == null) { NotFound(); }
+            return Ok(person);
+        }
     }
 }
