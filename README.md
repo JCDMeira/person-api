@@ -1,4 +1,4 @@
-# React resort booking - aplicação para agendar resort
+# person-Api
 
 <p align="center">
   <image
@@ -22,7 +22,7 @@
 - [Requisitos](#id02)
   - [Requisitos funcionais](#id02.1)
   - [Requisitos não funcionais](#id02.2)
-  - [Requisitos não obrigatórios](#id02.2)
+  - [Requisitos não obrigatórios](#id02.3)
 - [Aprendizados](#id03)
 - [Feito com](#id04)
 - [Pré-requisitos](#id05)
@@ -31,26 +31,26 @@
 
 # 🚀 Proposta <a name="id01"></a>
 
-Este é o projeto tem como objetivo central de refatorar uma aplicação que gera metaTags para adicionar nos arquivos html.
+Este é o projeto tem como objetivo central a criação de uma api que conte com end-point de get all para pessoas, a entidade contém os dados de nome, idade e gênero, além de um id único em formato GUID.
 
 # 🎯 Requisitos <a name="id02"></a>
-## 🎯 Requisitos funcionais
+## 🎯 Requisitos funcionais <a name="id02.1"></a>
 
 Sua aplicação deve ter:
 
 - Um end-point com método get para obter uma lista em json de pessoas com nome, idade e gênero. (dados que vem mockados)
 
-## 🎯 Requisitos não funcionais
+## 🎯 Requisitos não funcionais <a name="id02.2"></a>
 
 É obrigatório a utilização de:
 
 - .net
 
-## 🎯 Requisitos não obrigatórios
+## 🎯 Requisitos não obrigatórios <a name="id02.3"></a>
 
 - Utilizar context db para manter dados da aplicação
 
-# Aprendizados
+# Aprendizados  <a name="id03"></a>
 
 Esse projeto foi inicialmente idealizado para contemplar apenas um end-point de get que funcionaria como um getAll, o desafio foi dimensionado dessa forma para dar enfase ao estudo de como começar uma aplicação com c# e .net, assim como configurar a mesma e retornar dados mockados que em geral são usado como fake contract para quem consome.
 
