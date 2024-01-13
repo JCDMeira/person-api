@@ -31,9 +31,14 @@ namespace person_api.Controllers
         [HttpPost]
         public ActionResult Create(Person person)
         {
+            var newPerson = new Person();
+            newPerson.Id = Guid.NewGuid();
+            newPerson.Name = person.Name;
+            newPerson.Age = person.Age;
+            newPerson.Gender = person.Gender;
 
-            _context.Persons.Add(person);
-            return CreatedAtAction(nameof(GetById), new { id= Guid.NewGuid().ToString() }, person);
+            _context.Persons.Add(newPerson);
+            return CreatedAtAction(nameof(GetById), new { id= newPerson.Id.ToString() }, newPerson);
         }
     }
 }
